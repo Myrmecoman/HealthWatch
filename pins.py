@@ -1,8 +1,12 @@
+import machine
 from pyb import Pin
 
 
-screenSda = Pin('A8')
-screenScl = Pin('A9')
-screenVoltage = Pin('B7', Pin.OUT)
-screenVoltage.value(1)                          # send current
-screenGround = Pin('B6', Pin.IN, Pin.PULL_DOWN) # pull current
+# screen
+screenSda = machine.Pin('A14',)
+screenScl = machine.Pin('B3')
+
+# buttons
+button1 = Pin('A7', Pin.IN, Pin.PULL_UP)
+button2 = Pin('A6', Pin.IN, Pin.PULL_UP)
+button3 = Pin('A5', Pin.IN, Pin.PULL_UP)
