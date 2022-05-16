@@ -1,20 +1,20 @@
 import pins
 import ssd1306
 import machine
+import time
 from pyb import Pin
+from pyb import ADC
+
+
+# setup screen
+i2c = machine.SoftI2C(scl=pins.screenScl, sda=pins.screenSda)
+screen = ssd1306.SSD1306_I2C(128, 64, i2c)
 
 # setup clock
 now = (2020, 1, 21, 2, 10, 32, 36, 0)
 rtc = machine.RTC()
 rtc.datetime(now)
 lastCall = rtc.datetime()
-
-# setup screen
-i2c = machine.SoftI2C(scl=pins.screenScl, sda=pins.screenSda)
-screen = ssd1306.SSD1306_I2C(128, 64, i2c)
-
-screen.fill(1)
-screen.show()
 
 # buttons codes
 def rtcToMs(rtcTime):
@@ -51,3 +51,53 @@ def initButtonCallback():
 
 initButtonCallback()
 
+# graph utility code ---------------
+values = []
+values_avg = []
+
+def AddValue(val):
+    values_avg.append(val)
+    if len(values_avg) < 3:
+        return
+    avg = sum(values_avg) / 3
+    values.append(avg)
+    values_avg.clear()
+    if len(values) > 120:
+        del values[0]
+
+def DisplayValues():
+    screen.fill(0)
+    min = 1000000
+    max = 0
+
+    for i in range(len(values)):
+        if values[i] > max:
+            max = values[i]
+        if values[i] < min:
+            min = values[i]
+
+    maxSpread = max - min
+    if maxSpread == 0:
+        return
+
+    x = 60 - len(values)/2
+    for i in range(len(values) - 1):
+        y0 = ((values[i] - min)/maxSpread) * 60
+        y1 = ((values[i + 1] - min)/maxSpread) * 60
+        x = x + 1
+        screen.line(int(x), int(y0), int(x) + 1, int(y1), 1)
+    
+    screen.show()
+# end of graph utility code ---------------
+
+
+loopBeforeDisplay = 5
+loopNb = 0
+pins.spoVolt.value(1)
+time.sleep(0.05)
+while True:
+    AddValue(ADC('A2').read())
+    if loopNb >= loopBeforeDisplay - 1:
+        DisplayValues()
+    loopNb += 1
+    loopNb = loopNb % loopBeforeDisplay
