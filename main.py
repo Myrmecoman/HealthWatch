@@ -53,15 +53,14 @@ initButtonCallback()
 
 # graph utility code ---------------
 values = []
-values_avg = []
 
 def AddValue(val):
-    values_avg.append(val)
-    if len(values_avg) < 3:
-        return
-    avg = sum(values_avg) / 3
-    values.append(avg)
-    values_avg.clear()
+    val = -val + 4095
+    if len(values) > 2:
+        val = (val + values[len(values) - 1] + values[len(values) - 2])/3
+        values.append(val)
+    else:
+        values.append(val)
     if len(values) > 120:
         del values[0]
 
@@ -91,7 +90,7 @@ def DisplayValues():
 # end of graph utility code ---------------
 
 
-loopBeforeDisplay = 5
+loopBeforeDisplay = 3
 loopNb = 0
 pins.spoVolt.value(1)
 time.sleep(0.05)

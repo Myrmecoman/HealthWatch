@@ -16,10 +16,10 @@ screenScl = machine.Pin('A9')
 spoVolt = Pin('B8', Pin.OUT)
 spoGround = Pin('B9', Pin.IN, Pin.PULL_DOWN)
 
-sensorVolt = Pin('A0', Pin.OUT)
+sensorVolt = Pin('A2', Pin.OUT)
 sensorVolt.value(1)
 time.sleep(0.05)
-sensorInput = Pin('A2', Pin.IN, Pin.PULL_DOWN)
+sensorInput = Pin('A0', Pin.IN, Pin.PULL_DOWN)
 
 
 # buttons
