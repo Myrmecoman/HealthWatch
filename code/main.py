@@ -1,102 +1,51 @@
-import pins
-import ssd1306
-import machine
-import time
-from pyb import Pin
-from pyb import ADC
+from init import *
+from watch import *
+from heartbeat import *
+from flappy import *
+from notifs import *
 
 
-# setup screen
-i2c = machine.SoftI2C(scl=pins.screenScl, sda=pins.screenSda)
-screen = ssd1306.SSD1306_I2C(128, 64, i2c)
+App = [watch, heartbeat, notifs, flappy]
+App_L = [WATCH, HEART, NOTIFS, FLAPPY]
+index = 0
+swap_val = 0
+push = 0
 
-# setup clock
-now = (2020, 1, 21, 2, 10, 32, 36, 0)
-rtc = machine.RTC()
-rtc.datetime(now)
-lastCall = rtc.datetime()
+settime()
 
-# buttons codes
-def rtcToMs(rtcTime):
-    return rtcTime[3] * 86400000 + rtcTime[4] * 3600000 + rtcTime[5] * 60000 + rtcTime[6] * 1000 + rtcTime[7] // 1000
+# Reset screen
+oled.fill(0)
+oled.show()
 
-def callback1(p):
-    global lastCall
-    currentTime = rtcToMs(rtc.datetime())
-    if (currentTime - rtcToMs(lastCall) > 200):
-        lastCall = rtc.datetime()
-        print('button 1 pushed')
-
-def callback2(p):
-    global lastCall
-    currentTime = rtcToMs(rtc.datetime())
-    if (currentTime - rtcToMs(lastCall) > 200):
-        lastCall = rtc.datetime()
-        print('button 2 pushed')
-
-def callback3(p):
-    global lastCall
-    currentTime = rtcToMs(rtc.datetime())
-    if (currentTime - rtcToMs(lastCall) > 200):
-        lastCall = rtc.datetime()
-        print('button 3 pushed')
-
-def initButtonCallback():
-    p1 = pins.button1
-    p2 = pins.button2
-    p3 = pins.button3
-    p1.irq(trigger=Pin.IRQ_FALLING, handler=callback1)
-    p2.irq(trigger=Pin.IRQ_FALLING, handler=callback2)
-    p3.irq(trigger=Pin.IRQ_FALLING, handler=callback3)
-
-initButtonCallback()
-
-# graph utility code ---------------
-values = []
-
-def AddValue(val):
-    val = -val + 4095
-    if len(values) > 2:
-        val = (val + values[len(values) - 1] + values[len(values) - 2])/3
-        values.append(val)
-    else:
-        values.append(val)
-    if len(values) > 120:
-        del values[0]
-
-def DisplayValues():
-    screen.fill(0)
-    min = 1000000
-    max = 0
-
-    for i in range(len(values)):
-        if values[i] > max:
-            max = values[i]
-        if values[i] < min:
-            min = values[i]
-
-    maxSpread = max - min
-    if maxSpread == 0:
-        return
-
-    x = 60 - len(values)/2
-    for i in range(len(values) - 1):
-        y0 = ((values[i] - min)/maxSpread) * 60
-        y1 = ((values[i + 1] - min)/maxSpread) * 60
-        x = x + 1
-        screen.line(int(x), int(y0), int(x) + 1, int(y1), 1)
-    
-    screen.show()
-# end of graph utility code ---------------
-
-
-loopBeforeDisplay = 3
-loopNb = 0
-pins.spoVolt.value(1)
-time.sleep(0.05)
 while True:
-    AddValue(ADC('A2').read())
-    if loopNb >= loopBeforeDisplay - 1:
-        DisplayValues()
-    loopNb += 1
-    loopNb = loopNb % loopBeforeDisplay
+    oled.fill(0)
+
+    now = utime.gmtime()
+    t = ("", "0")[now[3] < 10] + str(now[3]) + ":" + ("", "0")[now[4] < 10] + str(now[4])
+    date = DAY[now[6]] + " " + str(now[2]) + " " + MONTH[now[1]] + " " + str(now[0])
+    write(5, 5, t, CC, 118, 16, 1, 2)
+    write(5, 20, date, CC, 118, 16, 1, 1)
+
+    swap_val = (getVrY(), swap_val)[swap_val != 0]
+    if swap_val != 0 and getVrY() == 0:
+        index += swap_val
+        index %= len(App_L)
+        swap_val = 0
+
+    push = (getBMid(), push)[push != 0]
+    if push != 0 and getBMid() == 0:
+        App[index]()
+        push = 0
+
+    for i in range(len(App_L)):
+        logo = App_L[i]
+        invert = index == i
+
+        for y, row in enumerate(logo):
+            for x, c in enumerate(row):
+                if invert:
+                    c = int(not c)
+                oled.pixel(36 + x + i * 15, 42 + y, c)
+    oled.show()
+
+uart.close()
