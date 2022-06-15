@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: C:\Data\__Dory\__Boards\__MB1293  USB Dongle (QFN48)\PCB\PCB revC\MB1293C.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=mb1293c-roundholes.txt|DrillLayers=gtl,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=mb1293c-slotholes.txt|DrillLayers=gtl,gbl

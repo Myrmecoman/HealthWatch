@@ -1,0 +1,6 @@
+DRC Rules Export File for PCB: C:\Data\__Dory\__Boards\__MB1293  USB Dongle (QFN48)\PCB\PCB revC\MB1293C.PcbDoc
+RuleKind=Clearance|RuleName=Clearance_1|Scope=Board|Minimum=3.94
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=3.94
+RuleKind=Clearance|RuleName=Clearance_PolyTop|Scope=Board|Minimum=4.53
