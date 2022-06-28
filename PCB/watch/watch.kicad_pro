@@ -1,28 +1,5 @@
 {
   "board": {
-    "design_settings": {
-      "defaults": {
-        "board_outline_line_width": 0.1,
-        "copper_line_width": 0.2,
-        "copper_text_size_h": 1.5,
-        "copper_text_size_v": 1.5,
-        "copper_text_thickness": 0.3,
-        "other_line_width": 0.15,
-        "silk_line_width": 0.15,
-        "silk_text_size_h": 1.0,
-        "silk_text_size_v": 1.0,
-        "silk_text_thickness": 0.15
-      },
-      "diff_pair_dimensions": [],
-      "drc_exclusions": [],
-      "rules": {
-        "min_copper_edge_clearance": 0.0,
-        "solder_mask_clearance": 0.0,
-        "solder_mask_min_width": 0.0
-      },
-      "track_widths": [],
-      "via_dimensions": []
-    },
     "layer_presets": []
   },
   "boards": [],
@@ -300,16 +277,7 @@
       "version": 1
     },
     "net_format_name": "",
-    "ngspice": {
-      "fix_include_paths": true,
-      "fix_passive_vals": false,
-      "meta": {
-        "version": 0
-      },
-      "model_mode": 0,
-      "workbook_filename": ""
-    },
-    "page_layout_descr_file": "",
+    "page_layout_descr_file": "empty.kicad_wks",
     "plot_directory": "",
     "spice_adjust_passive_values": false,
     "spice_external_command": "spice \"%I\"",
@@ -318,9 +286,20 @@
   },
   "sheets": [
     [
-      "9538e4ed-27e6-4c37-b989-9859dc0d49e8",
+      "17cf1c88-8d51-4538-aa76-e35ac22d0ed0",
       ""
     ]
   ],
-  "text_variables": {}
+  "text_variables": {
+    "ADDRESS1": "",
+    "ADDRESS2": "",
+    "ADDRESS3": "",
+    "ADDRESS4": "",
+    "APPLICATION_BUILDNUMBER": "",
+    "APPROVEDBY": "",
+    "AUTHOR": "Ph.A",
+    "DOCUMENTNUMBER": "",
+    "ORGANIZATION": "",
+    "SHEETTOTAL": "2"
+  }
 }
