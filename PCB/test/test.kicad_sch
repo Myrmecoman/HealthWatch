@@ -3827,7 +3827,6 @@
     )
   )
 
-
   (junction (at 5.08 151.13) (diameter 0) (color 0 0 0 0)
     (uuid 2a756062-4e0c-4114-bc6d-4d6635f2d703)
   )
@@ -5399,7 +5398,7 @@
     (property "Reference" "CONNECTEUR_NRST1" (id 0) (at 19.05 116.8399 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "" (id 1) (at 19.05 119.3799 0)
+    (property "Value" "Conn_01x01_Female" (id 1) (at 19.05 119.3799 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "" (id 2) (at 17.78 118.11 0)
@@ -5514,12 +5513,12 @@
   )
 
   (symbol (lib_id "MPB02-1B00-R-D:MPB02-1B00-R-D") (at 148.59 142.24 0) (unit 1)
-    (in_bom yes) (on_board yes) (fields_autoplaced)
+    (in_bom yes) (on_board yes)
     (uuid 3918f455-43b5-4b75-9cb3-d94d2246a79e)
     (property "Reference" "BUTTON2" (id 0) (at 148.59 132.08 0))
     (property "Value" "MPB02-1B00-R-D" (id 1) (at 148.59 134.62 0))
-    (property "Footprint" "SW_MPB02-1B00-R-D" (id 2) (at 148.59 142.24 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom) hide)
+    (property "Footprint" "SW_MPB02-1B00-R-D" (id 2) (at 138.43 130.81 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
     )
     (property "Datasheet" "" (id 3) (at 148.59 142.24 0)
       (effects (font (size 1.27 1.27)) (justify left bottom) hide)
@@ -7353,7 +7352,7 @@
     (property "Value" "USB_1" (id 1) (at 2.286 54.102 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Footprint" "USB/A_M1" (id 2) (at 11.43 43.18 0)
+    (property "Footprint" "" (id 2) (at 11.43 43.18 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "" (id 3) (at 11.43 43.18 0)
@@ -7784,7 +7783,7 @@
       (reference "C30") (unit 1) (value "0.8pF") (footprint "0402_CAP_NPOL")
     )
     (path "/f1447ad6-651c-45be-a2d6-33bddf672c2c"
-      (reference "CN3") (unit 1) (value "USB_1") (footprint "USB/A_M1")
+      (reference "CN3") (unit 1) (value "USB_1") (footprint "USB_A_M1")
     )
     (path "/12fa3c3f-3d14-451a-a6a8-884fd1b32fa7"
       (reference "CN4") (unit 1) (value "HEADER_1X4") (footprint "SIL4_127_B")
@@ -7793,13 +7792,13 @@
       (reference "CN5") (unit 1) (value "UFL") (footprint "UFL")
     )
     (path "/2713445a-5e01-40d8-94c6-c4d9a94c1daa"
-      (reference "CONNECTEUR_NRST1") (unit 1) (value "Conn_01x01_Female") (footprint "")
+      (reference "CONNECTEUR_NRST1") (unit 1) (value "Conn_01x01_Female") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical")
     )
     (path "/810ed4ff-ffe2-4032-9af6-fb5ada3bae5b"
       (reference "D4") (unit 1) (value "BAT54KFILM") (footprint "SOD523")
     )
     (path "/861921d0-f23c-4ac4-a1dd-b8dca74aec48"
-      (reference "FIXATION_ECRAN1") (unit 1) (value "HEADER_1X41") (footprint "")
+      (reference "FIXATION_ECRAN1") (unit 1) (value "HEADER_1X41") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
     )
     (path "/186c3f1e-1c94-498e-abf2-1069980f6633"
       (reference "FLT1") (unit 1) (value "LFB182G45CGFD436") (footprint "LFB182G45CGFD436")
@@ -7829,7 +7828,7 @@
       (reference "R2") (unit 1) (value "10K") (footprint "0402_RES")
     )
     (path "/df25edc2-4eb2-42fb-ac81-7e026ff7e840"
-      (reference "R_BUTTONS1") (unit 1) (value "330") (footprint "")
+      (reference "R_BUTTONS1") (unit 1) (value "330") (footprint "Resistor_SMD:R_0402_1005Metric")
     )
     (path "/51cc007a-3378-4ce3-909c-71e94822f8d1"
       (reference "SB1") (unit 1) (value "Open") (footprint "SB-tiny")
