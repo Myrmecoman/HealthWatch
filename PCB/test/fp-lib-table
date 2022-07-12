@@ -1,3 +1,2 @@
 (fp_lib_table
-  (lib (name "CMT-4023S-SMT-TR")(type "KiCad")(uri "${KIPRJMOD}/libraries/CMT-4023S-SMT-TR.pretty")(options "")(descr ""))
 )
