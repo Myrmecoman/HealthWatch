@@ -1,0 +1,16 @@
+(footprint "Sticker_Prod_22x6mm" (version 20211014) (generator pcbnew)
+  (layer "F.Cu")
+  (tedit 0)
+  (fp_text reference "REF**" (at 23.0759 -5.8039 90 unlocked) (layer "F.SilkS") hide
+    (effects (font (size 1.524 1.524) (thickness 0.254)) (justify left bottom))
+    (tstamp d4cb200c-6cb5-464e-bfc0-955c1381cece)
+  )
+  (fp_text value "Sticker_Prod_22x6" (at -2.3241 -5.8039 90 unlocked) (layer "F.SilkS") hide
+    (effects (font (size 1.524 1.524) (thickness 0.254)) (justify left bottom))
+    (tstamp 7c40f10b-0e91-4199-8588-401be84bb4f1)
+  )
+  (fp_line (start 21.999999 -6) (end 0 -6) (layer "F.SilkS") (width 0.1) (tstamp 12e4b75e-e2bd-41f5-ba05-980688fdba77))
+  (fp_line (start 21.999999 0) (end 21.999999 -6) (layer "F.SilkS") (width 0.1) (tstamp 7167aad5-420e-454e-ac52-fdb0bfc5592b))
+  (fp_line (start 0 0) (end 0 -6) (layer "F.SilkS") (width 0.1) (tstamp 7230c8ec-fdb9-49c9-b7a2-eb4319527a18))
+  (fp_line (start 21.999999 0) (end 0 0) (layer "F.SilkS") (width 0.1) (tstamp b82461d8-3017-42b6-b29d-8511db328ccc))
+)

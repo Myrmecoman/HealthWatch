@@ -1,0 +1,16 @@
+(footprint "LOGO_Sticker_Area" (version 20211014) (generator pcbnew)
+  (layer "F.Cu")
+  (tedit 0)
+  (fp_text reference "REF**" (at 23.0759 -5.8039 90 unlocked) (layer "F.SilkS") hide
+    (effects (font (size 1.524 1.524) (thickness 0.254)) (justify left bottom))
+    (tstamp d72142fe-0a2b-497f-8df9-4ddf78f454a8)
+  )
+  (fp_text value "LOGO_StickerArea_Prod_Reservation" (at -2.3241 -5.8039 90 unlocked) (layer "F.SilkS") hide
+    (effects (font (size 1.524 1.524) (thickness 0.254)) (justify left bottom))
+    (tstamp 1658c005-b332-46a4-9c7d-7fc545870900)
+  )
+  (fp_line (start 21.999999 -6) (end 0 -6) (layer "F.SilkS") (width 0.1) (tstamp 20bbb2f5-2cbd-4b22-a43c-ebd14405f9c7))
+  (fp_line (start 21.999999 0) (end 21.999999 -6) (layer "F.SilkS") (width 0.1) (tstamp 2f750cc5-83e1-4f5a-9264-e13223e023da))
+  (fp_line (start 21.999999 0) (end 0 0) (layer "F.SilkS") (width 0.1) (tstamp d3e062bb-1730-4652-9e8f-7a0011a3af7f))
+  (fp_line (start 0 0) (end 0 -6) (layer "F.SilkS") (width 0.1) (tstamp dbf6b8f8-4295-4aec-afc6-559bbc1de30c))
+)

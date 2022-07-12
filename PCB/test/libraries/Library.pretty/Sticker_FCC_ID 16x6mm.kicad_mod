@@ -1,0 +1,16 @@
+(footprint "Sticker_FCC_ID 16x6mm" (version 20211014) (generator pcbnew)
+  (layer "F.Cu")
+  (tedit 0)
+  (fp_text reference "REF**" (at 17.0561 -5.8039 270 unlocked) (layer "F.SilkS") hide
+    (effects (font (size 1.524 1.524) (thickness 0.254)) (justify left bottom))
+    (tstamp d585f400-fdc2-490a-bdcb-33cc0ea85473)
+  )
+  (fp_text value "FCC_ID_Sticker_16x6" (at -2.3241 -5.8039 270 unlocked) (layer "F.SilkS") hide
+    (effects (font (size 1.524 1.524) (thickness 0.254)) (justify left bottom))
+    (tstamp cd7f2d4b-e6d5-40ed-b030-1bb6d0276c1c)
+  )
+  (fp_line (start 0 -6) (end 16.000001 -6) (layer "F.SilkS") (width 0.1) (tstamp 06114002-5a85-4c69-99bb-78375bc85542))
+  (fp_line (start 16.000001 0) (end 16.000001 -6) (layer "F.SilkS") (width 0.1) (tstamp 400d7571-a8ac-4b7e-92d6-e056d5d66742))
+  (fp_line (start 0 0) (end 0 -6) (layer "F.SilkS") (width 0.1) (tstamp bd22fd72-79ac-4c5e-9c7a-77600aab605d))
+  (fp_line (start 0 0) (end 16.000001 0) (layer "F.SilkS") (width 0.1) (tstamp be41e023-52b9-48e7-a71c-a21683b86136))
+)
