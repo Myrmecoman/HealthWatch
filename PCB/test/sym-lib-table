@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name "test-altium-import")(type "KiCad")(uri "${KIPRJMOD}/test-altium-import.kicad_sym")(options "")(descr ""))
+  (lib (name "629004113921")(type "Legacy")(uri "${KIPRJMOD}/libraries/629004113921/629004113921.lib")(options "")(descr ""))
 )
