@@ -7462,8 +7462,8 @@
     (fp_arc (start 0.029997 2.139997) (mid -2.170003 -0.060003) (end 0.029997 -2.260003) (layer "B.SilkS") (width 0.1) (tstamp 2c6ab825-3df5-4caf-954e-1f0d9ea9e8d3))
     (fp_arc (start 4.305 3.3) (mid 1.005017 0.010713) (end 4.283574 -3.29993) (layer "B.SilkS") (width 0.1) (tstamp 32156469-6bb0-4a0d-be72-4bee2b95d45f))
     (fp_arc (start 4.325 2.124999) (mid 2.125001 -0.075) (end 4.325 -2.275001) (layer "B.SilkS") (width 0.1) (tstamp a5c542ea-e7c7-4eb6-a04b-8377420e3243))
-    (fp_arc (start 0.03 3.299997) (mid -3.269984 0.01071) (end 0.008574 -3.299933) (layer "B.SilkS") (width 0.1) (tstamp b25f866a-a0d1-41d2-b3d7-77e7ef9faed2))
-    (fp_arc (start 4.325003 3.284999) (mid 1.025019 -0.004288) (end 4.303577 -3.314931) (layer "B.SilkS") (width 0.1) (tstamp ec0cc7c3-7da2-4f55-9c1d-62977431aad9))
+    (fp_arc (start 0.03 3.299997) (mid -3.269985 0.01071) (end 0.008574 -3.299933) (layer "B.SilkS") (width 0.1) (tstamp b25f866a-a0d1-41d2-b3d7-77e7ef9faed2))
+    (fp_arc (start 4.325003 3.284999) (mid 1.025018 -0.004288) (end 4.303577 -3.314931) (layer "B.SilkS") (width 0.1) (tstamp ec0cc7c3-7da2-4f55-9c1d-62977431aad9))
   )
 
   (footprint "Logo_ST.PcbLib:LOGO ESD" (layer "B.Cu")
