@@ -1,4 +1,0 @@
-(fp_lib_table
-  (lib (name "Altium")(type "KiCad")(uri "/home/myrme/Documents/GitHub/HealthWatch/PCB/docDongle/schematics/MB1293C")(options "")(descr ""))
-  (lib (name "Library")(type "KiCad")(uri "/home/myrme/Documents/GitHub/HealthWatch/PCB/test/libraries/Library.pretty")(options "")(descr ""))
-)
